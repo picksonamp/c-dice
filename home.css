@@ -3,6 +3,11 @@
   src: url(Casino.ttf); 
 }
 
+input, textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -44,6 +49,7 @@ body {
   display: flex;
   gap: 50px;
   justify-content: space-evenly;
+  margin-top: 50px;
 }
 
 #dice, #blackDice {
@@ -83,12 +89,12 @@ body {
 }
 
 #checker {
-  position: absolute;
+  /* position: absolute; */
   left: 15%;
   top: 35%;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  align-items: space-evenly;
+  gap: 50px;
 }
 
 input {
@@ -125,4 +131,25 @@ outline: 2px solid rgba(118,13,20,1);
 border-radius: 5%;
 outline-offset: 5px;
 }
+
+@media(max-width: 1200px) {
+  #table {
+      height: 100vh;
+      width: 100vh;
+      border-radius: 15px;
+      justify-content: flex-start;
+      padding-top: 20px;
+    }
+
+    #header {
+      font-size: calc(3em + (8 - 3) * ((100vw - 320px) / (500 - 320)));
+      font-weight: 500;
+      margin-bottom: calc(30px + (50 - 30) * ((100vw - 320px) / (1200 - 320)));
+      margin-top: 5%;
+    }
+
+    #resetButton {
+      display: none;
+    }
+  }
 
